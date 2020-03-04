@@ -54,8 +54,6 @@ func printDiff(suppressedKinds []string, kind, before, after string, to io.Write
 			fmt.Fprintf(to, "%s\n", ansi.Color("+ "+text, "green"))
 		case difflib.LeftOnly:
 			fmt.Fprintf(to, "%s\n", ansi.Color("- "+text, "red"))
-		case difflib.Common:
-			fmt.Fprintf(to, "%s\n", "  "+text)
 		}
 	}
 }
